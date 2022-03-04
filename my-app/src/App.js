@@ -1,44 +1,88 @@
+// import React from 'react';
+// import './App.css';
+// import * as ReactBootStrap from "react-bootstrap";
+// import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
+
+
+// const App = (props) => {
+//   const patients = [
+//     {caseNumber: "1", Ambulance: "Medic A264", ETA: "10 min", Viewed: "Yes", Timestamp: "2022-03-03T16:26:35"},
+//     {caseNumber: "2", Ambulance: "Medic A004", ETA: "15 min", Viewed: "Yes", Timestamp: "2022-02-19T16:26:35"},
+//     {caseNumber: "3", Ambulance: "Medic A374", ETA: "25 min", Viewed: "Yes", Timestamp: "2022-03-10T16:26:35"}, 
+//     {caseNumber: "4", Ambulance: "Medic A269", ETA: "9 min", Viewed: "Yes", Timestamp: "2022-02-28T16:26:35"},
+//     {caseNumber: "5", Ambulance: "Medic A196", ETA: "5 min", Viewed: "Yes", Timestamp: "2022-01-31T16:26:35"},
+   
+//   ]
+  
+//   const renderPatients = (patient, index) => {
+//     return( 
+//       <tr key={index}>
+//         <td>{patient.caseNumber}</td>
+//         <td>{patient.Ambulance}</td>
+//         <td>{patient.ETA}</td>
+//         <td>{patient.Viewed}</td>
+//         <td>{patient.Timestamp}</td>
+//       </tr>
+//     )
+//   }
+
+//   return (
+//     <div className = "App">
+//     <img src="/ahs.png" alt="Logo"  height={120} width={200} />
+//     {/* <br>   <b>Incoming Patient Information </b> </br> */}
+   
+//     <ReactBootStrap.Table striped bordered hover >
+      
+//     <thead>
+//     <tr>
+      
+//       <th>Case Number</th>
+//       <th>Ambulance</th>
+//       <th>ETA</th>
+//       <th>Viewed</th>
+//       <th>Timestamp</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     {patients.map(renderPatients)}
+//   </tbody>
+// </ReactBootStrap.Table>
+//     </div>
+
+
+//   );
+// }
+
+// export default App;
+
+
 import React from 'react';
 import './App.css';
-import * as ReactBootStrap from "react-bootstrap";
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from './components/pages';
+import Table from './components/pages/Table';
+import Report from './components/pages/Report';
+import Report2 from './components/pages/Report2';
+import Report3 from './components/pages/Report3';
+import Report4 from './components/pages/Report4';
+import Report5 from './components/pages/Report5';
 
-
-const App = () => {
-  const patients = [
-    {leftCol: "Name", rightCol: "Billy Joel"},
-    {leftCol: "Age", rightCol: "45"},
-    {leftCol: "Healthcare #", rightCol: "5987-2618"}, 
-    {leftCol: "Gender", rightCol: "M"},
-    {leftCol: "Hospital", rightCol: "FMC"},
-    {leftCol: "Pain (1-10)", rightCol: "7"}, 
-    {leftCol: "Blood Pressure", rightCol: "148/70"},
-    {leftCol: "Pulse", rightCol: "78"},
-    {leftCol: "Pulse Ox", rightCol: "82%"}, 
-  ]
-  
-  const renderPatients = (patient, index) => {
-    return( 
-      <tr key={index}>
-        <td>{patient.leftCol}</td>
-        <td>{patient.rightCol}</td>
-      </tr>
-    )
-  }
-
-  return (
-    <div className = "App">
-    <img src="/ahs.png" alt="Logo"  height={120} width={200} />
-
-    <ReactBootStrap.Table striped bordered hover >
-    <b>Incoming Patient Information </b>
-  <tbody>
-    {patients.map(renderPatients)}
-  </tbody>
-</ReactBootStrap.Table>
-    </div>
-
-
-  );
+function App() {
+return (
+	<Router>
+	<Navbar />
+	<Routes>
+		<Route exact path='/' exact element={<Home />} />
+		<Route path='/Table' element={<Table/>} />
+		<Route path='/Report' element={<Report/>} />
+		<Route path='/Report2' element={<Report2/>} />
+		<Route path='/Report3' element={<Report3/>} />
+		<Route path='/Report4' element={<Report4/>} />
+		<Route path='/Report5' element={<Report5/>} />
+	</Routes>
+	</Router>
+);
 }
 
 export default App;
