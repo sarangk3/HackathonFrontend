@@ -1,16 +1,16 @@
 import React from 'react';
 //import './Table.css';
 import * as ReactBootStrap from "react-bootstrap";
-import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
+//import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
 
 
 const Table = (props) => {
   const patients = [
-    {caseNumber: <a href="./Report">1</a>, Ambulance: "Medic A264", ETA: "10 min", Viewed: "No", Timestamp: "2022-03-03T16:26:35"},
-    {caseNumber: <a href="./Report2">2</a>, Ambulance: "Medic A004", ETA: "15 min", Viewed: "Yes", Timestamp: "2022-02-19T16:26:35"},
-    {caseNumber: <a href="./Report3">3</a>, Ambulance: "Medic A374", ETA: "25 min", Viewed: "No", Timestamp: "2022-03-10T16:26:35"}, 
-    {caseNumber: <a href="./Report4">4</a>, Ambulance: "Medic A269", ETA: "9 min", Viewed: "Yes", Timestamp: "2022-02-28T16:26:35"},
-    {caseNumber: <a href="./Report5">5</a>, Ambulance: "Medic A196", ETA: "5 min", Viewed: "Yes", Timestamp: "2022-01-31T16:26:35"},
+    {caseNumber: <a href="./Report#Report1Header">1</a>, Ambulance: "Medic A264", ETA: "10 min", Viewed: "No", Timestamp: "2022-03-03T16:26:35"},
+    {caseNumber: <a href="./Report#Report2Header">2</a>, Ambulance: "Medic A004", ETA: "15 min", Viewed: "Yes", Timestamp: "2022-02-19T16:26:35"},
+    {caseNumber: <a href="./Report#Report3Header">3</a>, Ambulance: "Medic A374", ETA: "25 min", Viewed: "No", Timestamp: "2022-03-10T16:26:35"}, 
+    {caseNumber: <a href="./Report#Report4Header">4</a>, Ambulance: "Medic A269", ETA: "9 min", Viewed: "Yes", Timestamp: "2022-02-28T16:26:35"},
+    {caseNumber: <a href="./Report#Report5Header">5</a>, Ambulance: "Medic A196", ETA: "5 min", Viewed: "Yes", Timestamp: "2022-01-31T16:26:35"},
    
   ]
   

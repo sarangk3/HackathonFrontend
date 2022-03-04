@@ -63,23 +63,15 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/pages';
 import Table from './components/pages/Table';
 import Report from './components/pages/Report';
-import Report2 from './components/pages/Report2';
-import Report3 from './components/pages/Report3';
-import Report4 from './components/pages/Report4';
-import Report5 from './components/pages/Report5';
 
 function App() {
 return (
 	<Router>
 	<Navbar />
 	<Routes>
-		<Route exact path='/' exact element={<Home />} />
+		<Route exact path='/' element={<Home/>} />
 		<Route path='/Table' element={<Table/>} />
 		<Route path='/Report' element={<Report/>} />
-		<Route path='/Report2' element={<Report2/>} />
-		<Route path='/Report3' element={<Report3/>} />
-		<Route path='/Report4' element={<Report4/>} />
-		<Route path='/Report5' element={<Report5/>} />
 	</Routes>
 	</Router>
 );
