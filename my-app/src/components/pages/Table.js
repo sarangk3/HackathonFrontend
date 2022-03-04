@@ -6,7 +6,7 @@ import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
 
 const Table = (props) => {
   const patients = [
-    {caseNumber:  <a href="./Report">1</a>, Ambulance: "Medic A264", ETA: "10 min", Viewed: "No", Timestamp: "2022-03-03T16:26:35"},
+    {caseNumber: <a href="./Report">1</a>, Ambulance: "Medic A264", ETA: "10 min", Viewed: "No", Timestamp: "2022-03-03T16:26:35"},
     {caseNumber: <a href="./Report2">2</a>, Ambulance: "Medic A004", ETA: "15 min", Viewed: "Yes", Timestamp: "2022-02-19T16:26:35"},
     {caseNumber: <a href="./Report3">3</a>, Ambulance: "Medic A374", ETA: "25 min", Viewed: "No", Timestamp: "2022-03-10T16:26:35"}, 
     {caseNumber: <a href="./Report4">4</a>, Ambulance: "Medic A269", ETA: "9 min", Viewed: "Yes", Timestamp: "2022-02-28T16:26:35"},
