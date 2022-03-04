@@ -11,9 +11,9 @@
 //     {caseNumber: "3", Ambulance: "Medic A374", ETA: "25 min", Viewed: "Yes", Timestamp: "2022-03-10T16:26:35"}, 
 //     {caseNumber: "4", Ambulance: "Medic A269", ETA: "9 min", Viewed: "Yes", Timestamp: "2022-02-28T16:26:35"},
 //     {caseNumber: "5", Ambulance: "Medic A196", ETA: "5 min", Viewed: "Yes", Timestamp: "2022-01-31T16:26:35"},
-   
+
 //   ]
-  
+
 //   const renderPatients = (patient, index) => {
 //     return( 
 //       <tr key={index}>
@@ -30,12 +30,12 @@
 //     <div className = "App">
 //     <img src="/ahs.png" alt="Logo"  height={120} width={200} />
 //     {/* <br>   <b>Incoming Patient Information </b> </br> */}
-   
+
 //     <ReactBootStrap.Table striped bordered hover >
-      
+
 //     <thead>
 //     <tr>
-      
+
 //       <th>Case Number</th>
 //       <th>Ambulance</th>
 //       <th>ETA</th>
@@ -59,22 +59,26 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages';
 import Table from './components/pages/Table';
 import Report from './components/pages/Report';
+import ReportSingle from './components/pages/ReportSingle';
 
 function App() {
-return (
-	<Router>
-	<Navbar />
-	<Routes>
-		<Route exact path='/' element={<Home/>} />
-		<Route path='/Table' element={<Table/>} />
-		<Route path='/Report' element={<Report/>} />
-	</Routes>
-	</Router>
-);
+	return (
+		<Router>
+			<Navbar />
+			<div className="col-10 offset-1 pt-3">
+				<Routes>
+					<Route exact path='/' element={<Home />} />
+					<Route exact path='/Table' element={<Table />} />
+					<Route path="/Table/:id" element={<ReportSingle />} />
+					<Route path='/Report' element={<Report />} />
+				</Routes>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
