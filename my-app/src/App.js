@@ -64,20 +64,26 @@ import Home from './components/pages';
 import Table from './components/pages/Table';
 import Report from './components/pages/Report';
 import ReportSingle from './components/pages/ReportSingle';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 function App() {
+	const queryClient = new QueryClient({
+
+	});
 	return (
-		<Router>
-			<Navbar />
-			<div className="col-10 offset-1 pt-3">
-				<Routes>
-					<Route exact path='/' element={<Home />} />
-					<Route exact path='/Table' element={<Table />} />
-					<Route path="/Table/:id" element={<ReportSingle />} />
-					<Route path='/Report' element={<Report />} />
-				</Routes>
-			</div>
-		</Router>
+		<QueryClientProvider client={queryClient}>
+			<Router>
+				<Navbar />
+				<div className="col-10 offset-1 pt-3">
+					<Routes>
+						<Route exact path='/' element={<Home />} />
+						<Route exact path='/Table' element={<Table />} />
+						<Route path="/Table/:id" element={<ReportSingle />} />
+						<Route path='/Report' element={<Report />} />
+					</Routes>
+				</div>
+			</Router>
+		</QueryClientProvider>
 	);
 }
 
