@@ -14,9 +14,9 @@ const Navbar = () => {
 						Table
 					</NavLink>
 
-					<NavLink to="/Report" activeStyle>
+					{/* <NavLink to="/Report" activeStyle>
 						Report
-					</NavLink>
+					</NavLink> */}
 
 				</NavMenu>
 			</Nav>

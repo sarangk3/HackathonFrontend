@@ -62,7 +62,7 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages';
 import Table from './components/pages/Table';
-import Report from './components/pages/Report';
+//import Report from './components/pages/Report';
 import ReportSingle from './components/pages/ReportSingle';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import socketIOClient from "socket.io-client";
@@ -105,7 +105,7 @@ function App() {
 							<Route exact path='/' element={<Home />} />
 							<Route exact path='/Table' element={<Table notif={notif} />} />
 							<Route path="/Table/:id" element={<ReportSingle />} />
-							<Route path='/Report' element={<Report />} />
+							{/* <Route path='/Report' element={<Report />} /> */}
 						</Routes>
 					</div>
 					{showNotif ?
