@@ -8,8 +8,6 @@ const Notification = ({ setShowNotif, notif }) => {
     const formatTime = (time) => {
         var time = moment(time).format("YY/MM/DD HH:mm:ss")
         return time.toString();
-
-
     }
     const close = (e) => {
         e.preventDefault();
@@ -38,12 +36,12 @@ const Notification = ({ setShowNotif, notif }) => {
                                 <div className="fs-1 h-100 d-flex px-3 pb-3">
                                     <GoAlert fill="#db5858" className="my-auto" />
                                 </div>
-                                <div className=" ps-3 text-black w-100 h-100 d-flex flex-column me-3 overflow-hidden justify-content-around">
-                                    <div className="py-1"><b className="h6 me-1">Symptoms: </b>{notif.patient.symptoms}</div>
+                                <div className=" ps-3 text-black w-100 d-flex flex-column me-3" style={{ overflow: "auto" }}>
+                                    <div className="py-1"><b className="h6 me-1">Symptoms: </b>{notif.symptoms}</div>
                                     <div className="py-1"><b className="h6 me-1">Treatments: </b>{notif.treatmentProvided}</div>
-                                    <div className="py-1"><b className="h6 me-1">Medical History: </b>{notif.patient.medicalHistory}</div>
+                                    <div className="py-1"><b className="h6 me-1">Medical History: </b>{notif.medicalHistory}</div>
                                     <div className="py-1"><b className="h6 me-1">ETA: </b>{formatTime(notif.eta.toString())}</div>
-                                    <div className="py-1"><b className="h6 me-1">Operator </b>{notif.operator.name}</div>
+                                    <div className="py-1"><b className="h6 me-1">Operator: </b>{notif.operator.name}</div>
                                 </div>
                             </div>
                         </Toast.Body>

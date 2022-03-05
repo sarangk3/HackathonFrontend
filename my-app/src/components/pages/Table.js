@@ -4,7 +4,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 //import { MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
-
+import moment from 'moment';
 
 const Table = (props) => {
   const [tableContents, setTableContents] = useState([]);
@@ -29,6 +29,11 @@ const Table = (props) => {
 
   ]
 
+  const formatTime = (time) => {
+    var time = moment(time).format("YY/MM/DD HH:mm:ss")
+    return time.toString();
+  }
+
   const renderPatients = (patient, index) => {
     return (
       <tr key={index}>
@@ -46,9 +51,9 @@ const Table = (props) => {
       <tr key={index}>
         <td><Link to={`${patch._id}`}>{patch._id}</Link></td>
         <td>{patch.operator.name}</td>
-        <td>{patch.eta}</td>
+        <td>{formatTime(patch.eta)}</td>
         <td>{patch.received ? "Yes" : "No "}</td>
-        <td>Implement this after re generating data with time of request.</td>
+        <td>{formatTime(patch.time)}</td>
       </tr>
     )
   }
