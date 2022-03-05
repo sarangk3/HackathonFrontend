@@ -68,7 +68,7 @@ import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import socketIOClient from "socket.io-client";
 import Notification from './components/Notification';
 import { AnimatePresence } from 'framer-motion';
-const socketEndpoint = "http://127.0.0.1:3000";
+const socketEndpoint = "http://triage-backend.herokuapp.com";
 
 
 

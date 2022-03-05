@@ -11,7 +11,7 @@ const Table = (props) => {
 
   useEffect(() => {
     console.log("TABLE DATA  SHOULD UPDATE HERE");
-    const options = { url: "http://localhost:3000/triage/patch", method: "GET" }
+    const options = { url: "http:/triage-backend.herokuapp.com/triage/patch", method: "GET" }
     axios(options)
       .then((res) => {
         setTableContents(res.data);

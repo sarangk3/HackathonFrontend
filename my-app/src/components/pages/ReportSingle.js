@@ -16,7 +16,7 @@ const ReportSingle = () => {
 
     const queryClient = useQueryClient();
     const { isLoading, isError, data } = useQuery('individualReport', () => axios({
-        url: `http://localhost:3000/triage/patch/${id}`,
+        url: `http://triage-backend.herokuapp.com/triage/patch/${id}`,
         method: "GET",
     }).then(res => res.data)
     )
@@ -26,7 +26,7 @@ const ReportSingle = () => {
 
     useEffect(() => {
         const options = {
-            url: `http://localhost:3000/triage/patch/${id}`,
+            url: `http://triage-backend.herokuapp.com/triage/patch/${id}`,
             method: "GET"
         }
         axios(options)
