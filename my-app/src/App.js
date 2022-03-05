@@ -56,7 +56,7 @@
 // export default App;
 
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -64,25 +64,54 @@ import Home from './components/pages';
 import Table from './components/pages/Table';
 import Report from './components/pages/Report';
 import ReportSingle from './components/pages/ReportSingle';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import socketIOClient from "socket.io-client";
+import Notification from './components/Notification';
+import { AnimatePresence } from 'framer-motion';
+const socketEndpoint = "http://127.0.0.1:3000";
+
+
 
 function App() {
+	const [showNotif, setShowNotif] = useState();
+	const [notif, setNotif] = useState();
+
+
+	useEffect(() => {
+		const socket = socketIOClient(socketEndpoint);
+		socket.emit("newHospital", { hospital: "FoothillsHospital" })
+
+		socket.on("notification", (data) => {
+			setShowNotif(true);
+			setNotif(data);
+			console.log("Got notif");
+			console.log(data);
+
+		})
+
+	}, [])
+
+
 	const queryClient = new QueryClient({
 
 	});
 	return (
 		<QueryClientProvider client={queryClient}>
-			<Router>
-				<Navbar />
-				<div className="col-10 offset-1 pt-3">
-					<Routes>
-						<Route exact path='/' element={<Home />} />
-						<Route exact path='/Table' element={<Table />} />
-						<Route path="/Table/:id" element={<ReportSingle />} />
-						<Route path='/Report' element={<Report />} />
-					</Routes>
-				</div>
-			</Router>
+			<AnimatePresence exitBeforeEnter>
+				<Router>
+					<Navbar />
+					<div className="col-10 offset-1 pt-3">
+						<Routes>
+							<Route exact path='/' element={<Home />} />
+							<Route exact path='/Table' element={<Table notif={notif} />} />
+							<Route path="/Table/:id" element={<ReportSingle />} />
+							<Route path='/Report' element={<Report />} />
+						</Routes>
+					</div>
+					{showNotif ?
+						<Notification setShowNotif={setShowNotif} notif={notif} /> : ""}
+				</Router>
+			</AnimatePresence>
 		</QueryClientProvider>
 	);
 }

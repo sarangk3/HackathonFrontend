@@ -21,6 +21,10 @@ height: 100%;
 cursor: pointer;
 &.active {
 	color: #07de7c;
+};
+&.hover{
+	text-decoration:underline;
+	color:black;
 }
 `;
 

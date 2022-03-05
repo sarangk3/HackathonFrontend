@@ -10,14 +10,14 @@ const Table = (props) => {
   const [tableContents, setTableContents] = useState([]);
 
   useEffect(() => {
+    console.log("TABLE DATA  SHOULD UPDATE HERE");
     const options = { url: "http://localhost:3000/triage/patch", method: "GET" }
     axios(options)
       .then((res) => {
-        console.log(res.data);
         setTableContents(res.data);
       })
       .catch(err => console.log(err));
-  }, [])
+  }, [props.notif])
 
 
   const patients = [
@@ -54,15 +54,14 @@ const Table = (props) => {
   }
 
   return (
-    <div>
+    <div >
       <img src="/ahs.png" alt="Logo" height={120} width={200} />
       <br></br>
       Click on the Case Number in table below to view further details of the case
 
-      <div className="Table">
+      <div className="Table" style={{ maxHeight: "700px", overflow: "auto" }}>
 
         {/* <br>   <b>Incoming Patient Information </b> </br> */}
-
         <ReactBootStrap.Table striped bordered hover >
           <thead>
             <tr>
