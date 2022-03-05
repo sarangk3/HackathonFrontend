@@ -5,7 +5,9 @@ const Navbar = () => {
 	return (
 		<>
 			<Nav>
+
 				<NavMenu>
+					<img src="/ahs_nobg.png" alt="Logo" height={70} className="px-5" />
 					<NavLink to="/" activeStyle>
 						Home
 					</NavLink>

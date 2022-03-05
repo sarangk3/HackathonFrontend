@@ -42,7 +42,7 @@ const Notification = ({ setShowNotif, notif }) => {
                                     <div className="py-1"><b className="h6 me-1">Symptoms: </b>{notif.patient.symptoms}</div>
                                     <div className="py-1"><b className="h6 me-1">Treatments: </b>{notif.treatmentProvided}</div>
                                     <div className="py-1"><b className="h6 me-1">Medical History: </b>{notif.patient.medicalHistory}</div>
-                                    <div className="py-1"><b className="h6 me-1">ETA: </b>{notif.eta.toString()}</div>
+                                    <div className="py-1"><b className="h6 me-1">ETA: </b>{formatTime(notif.eta.toString())}</div>
                                     <div className="py-1"><b className="h6 me-1">Operator </b>{notif.operator.name}</div>
                                 </div>
                             </div>

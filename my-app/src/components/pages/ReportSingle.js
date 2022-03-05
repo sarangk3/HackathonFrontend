@@ -49,11 +49,11 @@ const ReportSingle = () => {
                 <Card className="text-center">
                     <Card.Header className="fw-bold fs-4 text-dark"
                         style={{
-                            backgroundColor: "#59c275"
+                            backgroundColor: "#41ba6a"
                         }}> EMS Report - Case#{id}</Card.Header >
-                    <Card.Body style={{ paddingLeft: "30px", paddingRight: "30px", height: "770px", overflow: "auto" }}>
+                    <Card.Body style={{ paddingLeft: "30px", paddingRight: "30px", height: "730px", overflow: "auto" }}>
                         <Form>
-                            <Form.Group as={Row} className="mb-3 font-weight-bold text-start border-bottom pb-3">
+                            <Form.Group as={Row} className="mb-2 font-weight-bold text-start border-bottom pb-3">
                                 <label for="description" className="fw-bold fs-5">
                                     Description:
                                 </label>
@@ -61,7 +61,7 @@ const ReportSingle = () => {
                                 </textarea>
 
                             </Form.Group>
-                            <Form.Group as={Row} className="mb-3 font-weight-bold border-bottom pb-3">
+                            <Form.Group as={Row} className="mb-2 font-weight-bold border-bottom pb-3">
                                 <div className="text-start fs-5 fw-bold pb-1">Vital Signs</div>
                                 <Form.Label column sm="2" className="font-weight-bold text-xl text-left">
                                     <div className="fw-bold ">Respiration (breaths/min): </div>
@@ -102,7 +102,7 @@ const ReportSingle = () => {
                                 </Col>
                             </Form.Group>
 
-                            <Form.Group as={Row} className="mb-3 font-weight-bold text-start pb-4 border-bottom" >
+                            <Form.Group as={Row} className="mb-2 font-weight-bold text-start pb-4 border-bottom" >
                                 <label for="symptoms" className="fw-bold">
                                     <div className="text-start fs-5 fw-bold  pb-1">Symptoms</div>
                                 </label>
@@ -110,7 +110,7 @@ const ReportSingle = () => {
                                     defaultValue={"No symptoms found for patient"} />
                             </Form.Group>
 
-                            <Form.Group as={Row} className="mb-3 font-weight-bold text-start pb-4 border-bottom" controlId="formPlaintextEmail">
+                            <Form.Group as={Row} className="mb-2 font-weight-bold text-start pb-4 border-bottom" controlId="formPlaintextEmail">
                                 <label for="ecg" className="fw-bold">
                                     <div className="text-start fs-5 fw-bold pb-1">ECG Interpretation</div>
                                 </label>
@@ -118,7 +118,7 @@ const ReportSingle = () => {
                                     defaultValue={"No ECG interpretation found for patient"} />
                             </Form.Group>
 
-                            <Form.Group as={Row} className="mb-3 font-weight-bold text-start pb-4 border-bottom" controlId="formPlaintextEmail">
+                            <Form.Group as={Row} className="mb-2 font-weight-bold text-start pb-4 border-bottom" controlId="formPlaintextEmail">
                                 <label for="treatment" className="fw-bold">
                                     <div className="text-start fs-5 fw-bold pb-1">Treatment</div>
                                 </label>
@@ -126,7 +126,7 @@ const ReportSingle = () => {
                                     defaultValue={"No treatments were given to the patient"} />
                             </Form.Group>
 
-                            <Form.Group as={Row} className="mb-3 font-weight-bold text-start pb-4 border-bottom">
+                            <Form.Group as={Row} className="font-weight-bold text-start pb-4 border-bottom">
                                 <label for="medicalHistory" className="fw-bold">
                                     <div className="text-start fs-5 fw-bold pb-1">Patient Medical History</div>
                                 </label>
@@ -136,7 +136,7 @@ const ReportSingle = () => {
                         </Form>
                     </Card.Body>
                     <Card.Footer>
-                        <Link to="/Table" className="btn btn-success">
+                        <Link to="/Table" className="btn" style={{ backgroundColor: "#41ba6a" }}>
                             Return to dashboard
                         </Link>
                     </Card.Footer>
